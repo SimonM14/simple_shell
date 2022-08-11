@@ -8,8 +8,10 @@
 ssize_t _puts(char *str)
 {
 ssize_t num, len;
+
 num = _strlen(str);
 len = write(STDOUT_FILENO, str, num);
+
 if (len != num)
 {
 perror("Fatal Error");
@@ -26,6 +28,7 @@ char *_strdup(char *strtodup)
 {
 char *copy;
 int len, i;
+
 if (strtodup == 0)
 return (NULL);
 for (len = 0; strtodup[len]; len++)
@@ -44,12 +47,13 @@ return (copy);
 int _strcmpr(char *strcmp1, char *strcmp2)
 {
 int i;
+
 i = 0;
 while (strcmp1[i] == strcmp2[i])
 {
 if (strcmp1[i] == '\0')
 return (0);
-i++;   
+i++;
 }
 return (strcmp1[i] - strcmp2[i]);
 }
@@ -63,6 +67,7 @@ char *_strcat(char *strc1, char *strc2)
 {
 char *newstring;
 unsigned int len1, len2, newlen, i, j;
+
 len1 = 0;
 len2 = 0;
 if (strc1 == NULL)
@@ -80,7 +85,8 @@ for (len2 = 0; strc2[len2]; len2++)
 ;
 }
 newlen = len1 + len2 + 2;
-newstring = malloc(newlen * sizeof(char));
+newstring = malloc(newlen *sizeof(char));
+
 if (newstring == NULL)
 return (NULL);
 for (i = 0; i < len1; i++)
