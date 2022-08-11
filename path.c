@@ -82,7 +82,6 @@ void check_for_path(vars_t *vars)
 
 	if (check_for_dir(vars->av[0]))
 		r = execute_cwd(vars);
-
 	else
 	{
 		path = find_path(vars->env);
@@ -99,7 +98,6 @@ void check_for_path(vars_t *vars)
 					free(check);
 					break;
 				}
-
 			}
 			free(path_dup);
 			if (path_tokens == NULL)
