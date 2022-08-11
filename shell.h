@@ -38,8 +38,8 @@ typedef struct variables
  */
 typedef struct builtins
 {
-  char *name;
-  void (*f)(vars_t *);
+	char *name;
+	void (*f)(vars_t *);
 } builtins_t;
 
 char **make_env(char **env);
@@ -76,4 +76,4 @@ void print_error(vars_t *vars, char *msg);
 void _puts2(char *str);
 char *_uitoa(unsigned int count);
 
-#endif SHELL_H
+#endif
